@@ -1,4 +1,4 @@
-webdriverio-5-playground
+webdriverio-6-playground
 ========================
 
 This is my WebdriverIO V6 playground

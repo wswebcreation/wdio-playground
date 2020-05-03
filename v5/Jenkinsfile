@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Install dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+
+        stage('Run Functional Tests') {
+            steps {
+              sh "npm run ${env.CLI_ARGS}"
+            }
+        }
+    }
+}

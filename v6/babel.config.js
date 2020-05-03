@@ -6,5 +6,7 @@ module.exports = {
             },
         } ],
     ],
-    plugins: ['@babel/plugin-proposal-private-methods']
+    plugins: [
+        '@babel/plugin-proposal-private-methods'
+    ]
 };
