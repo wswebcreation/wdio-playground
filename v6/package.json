@@ -1,0 +1,30 @@
+{
+  "name": "wdio-playground-v6",
+  "version": "1.0.0",
+  "description": "WebdriverIO V6 Playground",
+  "scripts": {
+    "test.local.chrome": "wdio test/configs/web/wdio.local.chrome.conf.js",
+    "test.sauce.chrome": "wdio test/configs/web/wdio.sauce.chrome.conf.js",
+    "test.rdc.app.android": "wdio test/configs/app/wdio.rdc.app.android.conf.js",
+    "test.rdc.app.ios": "wdio test/configs/app/wdio.rdc.app.ios.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@wdio/appium-service": "^6.1.0",
+    "@wdio/cli": "^6.1.5",
+    "@wdio/jasmine-framework": "^6.1.6",
+    "@wdio/local-runner": "^6.1.6",
+    "@wdio/sauce-service": "^6.1.0",
+    "@wdio/selenium-standalone-service": "^6.0.16",
+    "@wdio/spec-reporter": "^6.1.5",
+    "@wdio/sync": "^6.1.5",
+    "fs-extra": "^9.0.0"
+  }
+}
