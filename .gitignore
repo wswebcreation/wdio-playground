@@ -28,6 +28,7 @@ package-lock.json
 #
 .tmp/
 apps/
+image-baseline/
 
 
 # Test file

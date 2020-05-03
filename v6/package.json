@@ -5,6 +5,8 @@
   "scripts": {
     "lint": "eslint ./test",
     "test.local.chrome": "wdio test/configs/web/wdio.local.chrome.conf.js",
+    "test.local.app.android": "wdio test/configs/app/wdio.local.app.android.conf.js",
+    "test.local.app.ios": "wdio test/configs/app/wdio.local.app.ios.conf.js",
     "test.sauce.chrome": "wdio test/configs/web/wdio.sauce.chrome.conf.js",
     "test.rdc.app.android": "wdio test/configs/app/wdio.rdc.app.android.conf.js",
     "test.rdc.app.ios": "wdio test/configs/app/wdio.rdc.app.ios.conf.js"
@@ -32,6 +34,7 @@
     "fs-extra": "^9.0.0",
     "husky": "^4.2.5",
     "wdio-image-comparison-service": "^1.13.2",
+    "wdio-native-app-compare-service": "^1.2.0",
     "yargs": "^15.3.1"
   },
   "husky": {

@@ -1,4 +1,5 @@
 const { config } = require('../wdio.local.appium.shared.conf');
+const {nativeAppComparison} = require('../comparison.conf')
 const { join } = require('path');
 
 // ==================
@@ -26,6 +27,11 @@ config.capabilities = [
         includeSafariInWebviews: true,
     },
 ];
+
+// ========
+// Services
+// ========
+config.services = config.services.concat(nativeAppComparison);
 
 // =====
 // Hooks
