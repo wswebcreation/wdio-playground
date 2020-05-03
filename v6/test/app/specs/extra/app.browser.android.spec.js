@@ -39,13 +39,15 @@ describe('Android Appium', () => {
          */
         try {
             $('*//android.widget.ListView[@resource-id="android:id/resolver_list"]').waitForDisplayed(
-                // Use a max wait of 2 seconds
-                2000,
-                // This is a reverse parameter, when we provide a custom error
-                // message we need to provide the default value
-                false,
-                // A custom error message
-                'The notification is not shown, this is not an error.',
+                {
+                    // Use a max wait of 2 seconds
+                    timeout: 2000,
+                    // This is a reverse parameter, when we provide a custom error
+                    // message we need to provide the default value
+                    reverse: false,
+                    // A custom error message
+                    timeoutMsg: 'The notification is not shown, this is not an error.',
+                }
             );
 
             // Store if the button is there yes or no, this is for challenge 1a/1b
@@ -99,10 +101,12 @@ describe('Android Appium', () => {
             () => {
                 return driver.getContexts().find(context => context === 'WEBVIEW_chrome');
             },
-            // This time to verify if the condition is met
-            15000,
-            // The custom error message when the webview is not found in time
-            'Could not find the right `WEBVIEW_chrome`-context',
+            {
+                // This time to verify if the condition is met
+                timeout: 15000,
+                // The custom error message when the webview is not found in time
+                timeoutMsg: 'Could not find the right `WEBVIEW_chrome`-context',
+            }
         );
 
         // Now change to the correct webview

@@ -15,7 +15,7 @@ describe('iOS walk through', () => {
         const password = '//XCUIElementTypeSecureTextField[@name="test-Password"]';
         const loginButton = '//XCUIElementTypeOther[@name="test-LOGIN"]'
 
-        $(username).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(username).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(username).addValue(LOGIN_USERS.STANDARD.username);
         $(password).addValue(LOGIN_USERS.STANDARD.password);
         $(loginButton).click();
@@ -24,7 +24,7 @@ describe('iOS walk through', () => {
         const swagScreen = '//XCUIElementTypeOther[@name="test-PRODUCTS"]';
         const swagItem = '//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]//*[@name="test-ADD TO CART"]';
 
-        $(swagScreen).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(swagScreen).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(swagItem).click();
 
 
@@ -36,7 +36,7 @@ describe('iOS walk through', () => {
         // Go to checkout one
         const checkoutScreenOne = '//XCUIElementTypeOther[@name="test-Cart Content"]';
         const checkoutButton = '//XCUIElementTypeOther[@name="test-CHECKOUT"]';
-        $(checkoutScreenOne).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutScreenOne).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         Gestures.scrollDownToElement($(checkoutButton));
         $(checkoutButton).click();
@@ -46,7 +46,7 @@ describe('iOS walk through', () => {
         const lastName = '//XCUIElementTypeTextField[@name="test-Last Name"]';
         const zip = '//XCUIElementTypeTextField[@name="test-Zip/Postal Code"]';
         const continueButton = '//XCUIElementTypeOther[@name="test-CONTINUE"]';
-        $(continueButton).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(continueButton).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         $(firstName).addValue(PERSONAL_INFO.STANDARD.firstName);
         $(lastName).addValue(PERSONAL_INFO.STANDARD.lastName);
@@ -59,14 +59,14 @@ describe('iOS walk through', () => {
         const checkoutOverview = '//XCUIElementTypeOther[@name="test-CHECKOUT: OVERVIEW"]';
         const finishButton = '//XCUIElementTypeOther[@name="test-FINISH"]';
 
-        $(checkoutOverview).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutOverview).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         Gestures.scrollDownToElement($(finishButton));
         $(finishButton).click();
 
         // Verify you're on finished screen
         const checkoutFinish = '//XCUIElementTypeOther[@name="test-CHECKOUT: COMPLETE!"]';
 
-        $(checkoutFinish).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutFinish).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         // [iPhone X MAC 12.2 #0-0] iOS walk through
         // [iPhone X MAC 12.2 #0-0]    ✓ should be able to use XPATH to walk through the app

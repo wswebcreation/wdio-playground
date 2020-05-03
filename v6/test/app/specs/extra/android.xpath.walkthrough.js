@@ -15,7 +15,7 @@ describe('Android walk through', () => {
         const password = '//android.widget.EditText[@content-desc="test-Password"]';
         const loginButton = '//android.view.ViewGroup[@content-desc="test-LOGIN"]'
 
-        $(username).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(username).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(username).addValue(LOGIN_USERS.STANDARD.username);
         $(password).addValue(LOGIN_USERS.STANDARD.password);
         $(loginButton).click();
@@ -24,7 +24,7 @@ describe('Android walk through', () => {
         const swagScreen = '//android.widget.ScrollView[@content-desc="test-PRODUCTS"]';
         const swagItem = '//android.widget.TextView[contains(@text,"Sauce Labs Bike Light")]//ancestor::*[@content-desc="test-Item"]//*[@content-desc="test-ADD TO CART"]';
 
-        $(swagScreen).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(swagScreen).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(swagItem).click();
 
 
@@ -35,7 +35,7 @@ describe('Android walk through', () => {
 
         // Go to checkout one
         const checkoutButton = '//android.view.ViewGroup[@content-desc="test-CHECKOUT"]';
-        $(checkoutButton).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutButton).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         $(checkoutButton).click();
 
@@ -44,7 +44,7 @@ describe('Android walk through', () => {
         const lastName = '//android.widget.EditText[@content-desc="test-Last Name"]';
         const zip = '//android.widget.EditText[@content-desc="test-Zip/Postal Code"]';
         const continueButton = '//android.view.ViewGroup[@content-desc="test-CONTINUE"]';
-        $(continueButton).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(continueButton).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         $(firstName).addValue(PERSONAL_INFO.STANDARD.firstName);
         $(lastName).addValue(PERSONAL_INFO.STANDARD.lastName);
@@ -57,14 +57,14 @@ describe('Android walk through', () => {
         const checkoutOverview = '//android.widget.ScrollView[@content-desc="test-CHECKOUT: OVERVIEW"]';
         const finishButton = '//android.view.ViewGroup[@content-desc="test-FINISH"]';
 
-        $(checkoutOverview).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutOverview).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         Gestures.scrollDownToElement($(finishButton), 2);
         $(finishButton).click();
 
         // Verify you're on finished screen
         const checkoutFinish = '//android.widget.ScrollView[@content-desc="test-CHECKOUT: COMPLETE!"]';
 
-        $(checkoutFinish).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(checkoutFinish).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         // [iPhone X MAC 12.2 #0-0] iOS walk through
         // [iPhone X MAC 12.2 #0-0]    ✓ should be able to use XPATH to walk through the app

@@ -64,7 +64,7 @@ describe('iOS Appium', () => {
             // If the `correctWebview` contains a value this function will evaluate to `true` meaning
             // the `waitUntil` can stop
             return correctWebview || false;
-        }, DEFAULT_TIMEOUT);
+        }, {timeout: DEFAULT_TIMEOUT});
 
         // Now switch to the right context
         driver.switchContext(correctWebview.id);

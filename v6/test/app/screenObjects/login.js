@@ -55,7 +55,7 @@ class LoginScreen extends Base {
    * @return {string}
    */
   getErrorMessage() {
-    this.errorMessage.waitForDisplayed(DEFAULT_TIMEOUT);
+    this.errorMessage.waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
     return getTextOfElement(this.errorMessage);
   }

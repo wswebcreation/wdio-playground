@@ -15,7 +15,7 @@ describe('iOS walk through', () => {
         const password = '**/XCUIElementTypeSecureTextField[`name CONTAINS "test-Password"`]';
         const loginButton = '**/XCUIElementTypeOther[`name CONTAINS "test-LOGIN"`]';
 
-        $(`-ios class chain:${ username }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ username }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(`-ios class chain:${ username }`).addValue(LOGIN_USERS.STANDARD.username);
         $(`-ios class chain:${ password }`).addValue(LOGIN_USERS.STANDARD.password);
         $(`-ios class chain:${ loginButton }`).click();
@@ -24,7 +24,7 @@ describe('iOS walk through', () => {
         const swagScreen = '**/XCUIElementTypeOther[`name CONTAINS "test-PRODUCTS"`]';
         const swagItem = '**/XCUIElementTypeOther[`name CONTAINS "test-Item"`]/**/XCUIElementTypeOther[`name CONTAINS "Sauce Labs Bike Light" AND name CONTAINS "ADD TO CART"`]/**/XCUIElementTypeOther[`name == "test-ADD TO CART"`]';
 
-        $(`-ios class chain:${ swagScreen }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ swagScreen }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         $(`-ios class chain:${ swagItem }`).click();
 
 
@@ -36,7 +36,7 @@ describe('iOS walk through', () => {
         // Go to checkout one
         const checkoutScreenOne = '**/XCUIElementTypeOther[`name CONTAINS "test-Cart Content"`]';
 
-        $(`-ios class chain:${ checkoutScreenOne }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ checkoutScreenOne }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         const checkoutButton = '**/XCUIElementTypeOther[`name CONTAINS "test-CHECKOUT"`]';
 
@@ -48,7 +48,7 @@ describe('iOS walk through', () => {
         const lastName = '**/XCUIElementTypeTextField[`name CONTAINS "test-Last Name"`]';
         const zip = '**/XCUIElementTypeTextField[`name CONTAINS "test-Zip/Postal Code"`]';
         const continueButton = '**/XCUIElementTypeOther[`name CONTAINS "test-CONTINUE"`]';
-        $(`-ios class chain:${ continueButton }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ continueButton }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         $(`-ios class chain:${ firstName }`).addValue(PERSONAL_INFO.STANDARD.firstName);
         $(`-ios class chain:${ lastName }`).addValue(PERSONAL_INFO.STANDARD.lastName);
@@ -61,14 +61,14 @@ describe('iOS walk through', () => {
         const checkoutOverview = '**/XCUIElementTypeOther[`name CONTAINS "test-CHECKOUT: OVERVIEW"`]';
         const finishButton = '**/XCUIElementTypeOther[`name CONTAINS "test-FINISH"`]';
 
-        $(`-ios class chain:${ checkoutOverview }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ checkoutOverview }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
         Gestures.scrollDownToElement($(`-ios class chain:${ finishButton }`));
         $(`-ios class chain:${ finishButton }`).click();
 
         // Verify you're on finished screen
         const checkoutFinish = '**/XCUIElementTypeOther[`name CONTAINS "test-CHECKOUT: COMPLETE!"`]';
 
-        $(`-ios class chain:${ checkoutFinish }`).waitForDisplayed(DEFAULT_TIMEOUT);
+        $(`-ios class chain:${ checkoutFinish }`).waitForDisplayed({timeout:DEFAULT_TIMEOUT});
 
         // [iPhone X MAC 12.2 #0-0] iOS walk through
         // [iPhone X MAC 12.2 #0-0]    ✓ should be able to use predicate string to walk through the app

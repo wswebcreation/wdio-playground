@@ -53,6 +53,6 @@ describe('Deep linking', () => {
 	it('should be able to open the Webview screen', () => {
 		openDeepLinkUrl('webview');
 
-		expect(Webview.input.waitForDisplayed(DEFAULT_TIMEOUT)).toEqual(true, 'The Webview is not shown');
+		expect(Webview.input.waitForDisplayed({timeout:DEFAULT_TIMEOUT})).toEqual(true, 'The Webview is not shown');
 	});
 });
