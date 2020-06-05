@@ -36,7 +36,7 @@ describe('Login', () => {
         $('~test-CHECKOUT: COMPLETE!').waitForDisplayed();
     });
 
-    fit('should be able order swag and do the checkout with batch commands', () => {
+    it('should be able order swag and do the checkout with batch commands', () => {
         driver.driverScript(
             'await (await driver.$(\'~test-Login\')).waitForDisplayed();\n' +
             '        await driver.setValueImmediate((await driver.$(\'~test-Username\')).elementId,\'standard_user\');\n' +

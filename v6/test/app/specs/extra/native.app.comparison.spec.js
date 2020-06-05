@@ -1,5 +1,7 @@
 import LoginScreen from '../../screenObjects/login';
 import {restartApp} from '../../helpers/utils';
+import InventoryListScreen from '../../screenObjects/inventoryList';
+import {LOGIN_USERS} from '../../../configs/e2eConstants';
 
 describe('WebdriverIO and Appium should be able to compare screenshots together', () => {
     beforeEach(() => {
@@ -57,45 +59,76 @@ describe('WebdriverIO and Appium should be able to compare screenshots together'
     });
 
     it('should be able to save or compare an element', () => {
-        // SAVE ELEMENT
-        driver.saveElement(LoginScreen.loginButton, 'saveElement');
+        // // SAVE ELEMENT
+        // driver.saveElement(LoginScreen.loginButton, 'saveElement');
+        //
+        // // SAVE ELEMENT WITH POSITIVE RESIZED DIMENSIONS
+        // driver.saveElement(
+        //     LoginScreen.loginButton,
+        //     'saveElement-positive-resized', {
+        //         resizeDimensions: {
+        //             top: 200,
+        //             right: 20,
+        //             bottom: 100,
+        //             left: 40,
+        //         }
+        //     });
+        //
+        // // SAVE ELEMENT WITH NEGATIVE RESIZED DIMENSIONS
+        // driver.saveElement(
+        //     LoginScreen.loginButton,
+        //     'saveElement-negative-resized',
+        //     {
+        //         resizeDimensions: {
+        //             top: -40,
+        //             right: -20,
+        //             bottom: -70,
+        //             left: -250,
+        //         },
+        //     });
+        //
+        //
+        // // COMPARE ELEMENT
+        // driver.compareElement(
+        //     LoginScreen.loginButton,
+        //     'new-compareElement-crop-method',
+        //     {
+        //         resizeDimensions: {},
+        //     },
+        // );
+        // driver.compareElement(
+        //     LoginScreen.loginButton,
+        //     'new-compareElement-direct-method',
+        // );
+        LoginScreen.signIn(LOGIN_USERS.STANDARD);
+        InventoryListScreen.waitForIsShown();
 
-        // SAVE ELEMENT WITH POSITIVE RESIZED DIMENSIONS
-        driver.saveElement(
-            LoginScreen.loginButton,
-            'saveElement-positive-resized', {
-                resizeDimensions: {
-                    top: 200,
-                    right: 20,
-                    bottom: 100,
-                    left: 40,
-                }
-            });
-
-        // SAVE ELEMENT WITH NEGATIVE RESIZED DIMENSIONS
-        driver.saveElement(
-            LoginScreen.loginButton,
-            'saveElement-negative-resized', {
-                resizeDimensions: {
-                    top: -40,
-                    right: -20,
-                    bottom: -70,
-                    left: -250,
-                }
-            });
-
-
-        // COMPARE ELEMENT
-        driver.compareElement(
-            LoginScreen.loginButton,
-            'new-compareElement-crop-method',
+        const result = driver.compareElement(
+            InventoryListScreen.swagItem('Sauce Labs Backpack'),
+            'backpack',
             {
-                resizeDimensions: {},
+                elementBlockOuts: [
+                    // block out element 1
+                    {
+                        element: InventoryListScreen.swagItem('Sauce Labs Backpack').$$('~test-Price')[0],
+                        margin: 50
+                    },
+                    {
+                        element: InventoryListScreen.swagItem('Sauce Labs Backpack').$$('~test-Item title')[0]
+                    },
+                    {
+                        element: InventoryListScreen.swagItem('Sauce Labs Backpack').$$('~test-ADD TO CART')[0],
+                        margin: 50
+                    },
+                    // // block out element 2 (shorthand) with margin
+                    // {
+                    //     element: LoginScreen.username,
+                    //     margin: 50
+                    // },
+                ]
             },
         );
-        driver.compareElement(
-            LoginScreen.loginButton,
-            'new-compareElement-direct-method',
-        );
+
+        console.log('result = ', result)
     });
 });
