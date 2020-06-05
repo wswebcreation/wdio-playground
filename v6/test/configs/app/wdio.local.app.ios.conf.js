@@ -17,7 +17,7 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone 11',
         platformName: 'iOS',
-        platformVersion: '13.4',
+        platformVersion: '13.5',
         orientation: 'PORTRAIT',
         app: join(process.cwd(), '../apps/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.1.0.app.zip'),
         maxInstances: 1,
@@ -25,8 +25,11 @@ config.capabilities = [
         fullContextList: true,
         // Add Safari as a Webview
         includeSafariInWebviews: true,
+        noReset: true
     },
 ];
+
+config.path= '/wd/hub'
 
 // ========
 // Services

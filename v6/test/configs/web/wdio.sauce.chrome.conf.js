@@ -5,6 +5,8 @@ const defaultBrowserSauceOptions = {
     build: `WdioV6 Chrome - ${new Date().getTime()}`,
     seleniumVersion: '3.141.59',
     extendedDebugging: true,
+    // capturePerformance: true,
+    // tunnelIdentifier: 'sample-app-web'
 };
 const chromeOptions = {
     'goog:chromeOptions': {
