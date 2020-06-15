@@ -14,21 +14,25 @@ config.specs = [
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
-        deviceName: 'iPhone [678].*',
+        deviceName: 'iPhone_XS_ws',
         // The api key that has a reference to the app-project in the TO cloud
         testobject_api_key: process.env.SAUCE_RDC_EU_ACCESS_KEY_IOS,
+        // testobject_api_key: 'DE91AF13515B47A7A3B1896F390D51D3',
         // The name of the test for in the cloud
         testobject_test_name: 'sample-app-mobile',
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
+        maxInstances: 1,
         platformName: 'iOS',
         idleTimeout: 180,
-        cacheId: new Date().getTime(),
+        // cacheId: new Date().getTime(),
         noReset: true,
         orientation: 'PORTRAIT',
         newCommandTimeout: 180,
         phoneOnly: true,
         tabletOnly: false,
+        // autoWebview: true,
+        wdaEventloopIdleDelay: 5,
     },
 ];
 

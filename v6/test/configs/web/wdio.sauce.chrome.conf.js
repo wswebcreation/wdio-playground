@@ -2,9 +2,9 @@ const { config } = require('../wdio.sauce.shared.conf');
 const screenResolution = '1600x1200';
 const defaultBrowserSauceOptions = {
     screenResolution,
-    build: `WdioV6 Chrome - ${new Date().getTime()}`,
-    seleniumVersion: '3.141.59',
-    extendedDebugging: true,
+    // build: `WdioV6 Chrome - ${new Date().getTime()}`,
+    // seleniumVersion: '3.141.59',
+    // extendedDebugging: true,
     // capturePerformance: true,
     // tunnelIdentifier: 'sample-app-web'
 };
@@ -32,6 +32,14 @@ config.capabilities = [
             ...defaultBrowserSauceOptions,
         },
         ...chromeOptions,
+    },
+    {
+        browserName: 'internet explorer',
+        browserVersion: 'latest',
+        platformName: 'Windows 10',
+        'sauce:options': {
+            ...defaultBrowserSauceOptions,
+        },
     },
 ];
 
