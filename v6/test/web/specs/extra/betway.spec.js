@@ -24,7 +24,7 @@ describe('Appium', () => {
         // Push it to the device and wait till it is uploaded
         // This is the `tricky` part, you need to know the file structure of the device and where you can download
         // the file from. I've checked this structure with the VUSB offering of Sauce Labs for private devices.
-        browser.pushFile('/storage/self/primary/sauce-bot-coding.png', codingBot);
+        driver.pushFile('/storage/self/primary/sauce-bot-coding.png', codingBot);
 
         // Now click on upload again, but that's in the webview context
         switchToWebview();
@@ -56,8 +56,8 @@ function login() {
 
     // Login
     $('#LoginUsername').waitForDisplayed();
-    $('#LoginUsername').setValue('betwaytest_acq_1114');
-    $('#LoginPassword').setValue('123123');
+    $('#LoginUsername').setValue('foo');
+    $('#LoginPassword').setValue('bar');
     $('#login-submit-button').click();
 
     // Go to the correct url
