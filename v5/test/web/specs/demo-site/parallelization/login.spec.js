@@ -9,7 +9,7 @@ describe('Parallelization - Login', () => {
         browser.url('');
     });
 
-    fit('should be able to test loading of login page', () => {
+    it('should be able to test loading of login page', () => {
         expect(LoginScreen.waitForIsDisplayed()).toEqual(
             true,
             'Login page was not shown',
