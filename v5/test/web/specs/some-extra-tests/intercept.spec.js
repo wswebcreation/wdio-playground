@@ -59,6 +59,24 @@ describe('Sauce Labs intercept method', () => {
         expect($$('.card').length).toEqual(1);
     });
 
+    // it('should be able to intercept and show 1 item on the page', () => {
+    //     browser.interceptRequest(
+    //         'sauce:intercept', {
+    //             'url': 'https://ghibliapi.herokuapp.com/films',
+    //             'response': {
+    //                 "headers": {
+    //                     "Content-Type": "application/json; charset=utf-8",
+    //                     "Access-Control-Allow-Origin": "https://taniarascia.github.io"
+    //                 },
+    //                 "body": smallBody
+    //             }
+    //         }
+    //     );
+    //     browser.url('https://taniarascia.github.io/sandbox/ghibli/');
+    //     $('.container').waitForDisplayed(5000);
+    //     expect($$('.card').length).toEqual(1);
+    // });
+
     it('replace all images', () => {
         browser.url('http://www.wswebcreation.nl/');
         browser.execute(

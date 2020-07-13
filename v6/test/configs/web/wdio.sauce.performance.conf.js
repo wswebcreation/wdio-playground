@@ -1,11 +1,10 @@
-const {config} = require('../wdio.sauce.shared.conf');
+const { config } = require('../wdio.sauce.shared.conf');
 const screenResolution = '1600x1200';
 const defaultBrowserSauceOptions = {
     screenResolution,
-    build: `WdioV6 Chrome - ${new Date().getTime()}`,
-    // seleniumVersion: '3.141.59',
-    // extendedDebugging: true,
-    // tunnelIdentifier: 'sample-app-web'
+    build: `WdioV6 Chrome Performance - ${new Date().getTime()}`,
+    extendedDebugging: true,
+    capturePerformance: true,
 };
 const chromeOptions = {
     'goog:chromeOptions': {
@@ -15,8 +14,8 @@ const chromeOptions = {
 // ==================
 // Specify Test Files
 // ==================
-config.specs = [
-    './test/web/specs/demo-site/best-practices/*.js',
+config.specs= [
+    './test/web/specs/performance/*.spec.js',
 ];
 
 // ============
@@ -31,14 +30,6 @@ config.capabilities = [
             ...defaultBrowserSauceOptions,
         },
         ...chromeOptions,
-    },
-    {
-        browserName: 'internet explorer',
-        browserVersion: 'latest',
-        platformName: 'Windows 10',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
     },
 ];
 
