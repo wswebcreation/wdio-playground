@@ -13,13 +13,37 @@ config.region = 'us'
 // ============
 config.capabilities = [
     {
-        deviceName: 'Samsung Galaxy S9 WQHD GoogleAPI Emulator',
+        deviceName: 'Android GoogleAPI Emulator',
         platformName: 'Android',
-        platformVersion: '9.0',
-        autoWebview: true,
-        app: 'sauce-storage:provide-app-here',
+        platformVersion: '10',
+        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
+        app: 'sauce-storage:sample-app-android.apk',
         appiumVersion: '1.17.1',
     },
+    {
+        deviceName: 'Android GoogleAPI Emulator',
+        platformName: 'Android',
+        platformVersion: '9.0',
+        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
+        app: 'sauce-storage:sample-app-android.apk',
+        appiumVersion: '1.17.1',
+    },
+    {
+        deviceName: 'Android GoogleAPI Emulator',
+        platformName: 'Android',
+        platformVersion: '8.1',
+        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
+        app: 'sauce-storage:sample-app-android.apk',
+        appiumVersion: '1.17.1',
+    },
+    // {
+    //     deviceName: 'Android GoogleAPI Emulator',
+    //     platformName: 'Android',
+    //     platformVersion: '7.1',
+    //     appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
+    //     app: 'sauce-storage:sample-app-android.apk',
+    //     appiumVersion: '1.17.1',
+    // },
 ];
 
 // =====
