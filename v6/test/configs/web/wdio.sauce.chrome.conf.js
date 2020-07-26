@@ -32,14 +32,6 @@ config.capabilities = [
         },
         ...chromeOptions,
     },
-    {
-        browserName: 'internet explorer',
-        browserVersion: 'latest',
-        platformName: 'Windows 10',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
 ];
 
 exports.config = config;

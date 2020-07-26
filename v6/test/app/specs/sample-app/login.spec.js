@@ -9,7 +9,7 @@ describe('Login', () => {
         LoginScreen.waitForIsShown();
     });
 
-    fit('should be able to login with a standard user', () => {
+    it('should be able to login with a standard user', () => {
         console.log('driver = ', driver)
         LoginScreen.signIn(LOGIN_USERS.STANDARD);
         expect(InventoryListScreen.isShown()).toEqual(true, 'Inventory List screen was not shown');
