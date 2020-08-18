@@ -13,6 +13,7 @@
     "test.sauce.app.android.emulator": "wdio test/configs/app/wdio.sauce.app.android.emu.conf.js",
     "test.sauce.emulator.browser.android": "wdio test/configs/web/wdio.sauce.emu.browser.android.conf.js",
     "test.sauce.simulator.browser.ios": "wdio test/configs/web/wdio.sauce.emu.browser.ios.conf.js",
+    "test.sauce.simulator.browser.ios.w3c.jswp": "wdio test/configs/web/wdio.sauce.sim.browser.ios.conf.js",
     "test.sauce.real.browser.ios": "wdio test/configs/web/wdio.sauce.real.browser.ios.conf.js",
     "test.sauce.chrome": "wdio test/configs/web/wdio.sauce.chrome.conf.js",
     "test.sauce.performance": "wdio test/configs/web/wdio.sauce.performance.conf.js",
