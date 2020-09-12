@@ -55,7 +55,7 @@
     "eslint-plugin-jasmine": "^4.1.1",
     "fs-extra": "^9.0.1",
     "husky": "^4.2.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "screener-runner": "^0.11.5",
     "wdio-image-comparison-service": "^1.12.2",
     "webdriverio": "^5.22.4",
