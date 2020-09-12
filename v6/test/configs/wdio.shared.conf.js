@@ -29,4 +29,5 @@ exports.config = {
     // Services
     // ========
     services: [],
+    // services: ['parallel-runner'],
 }

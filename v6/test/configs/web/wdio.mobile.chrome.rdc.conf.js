@@ -14,7 +14,7 @@ config.specs= [
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
   {
-    deviceName: 'Samsung_Galaxy_S10_ws',
+    deviceName: 'Samsung Galaxy S[10|20|7|8|9]',
     automationName: 'UiAutomator2',
     // The reference to the app
     // testobject_app_id: '1',

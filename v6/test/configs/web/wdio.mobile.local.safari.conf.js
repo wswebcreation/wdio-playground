@@ -17,7 +17,7 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone 11',
         platformName: 'iOS',
-        platformVersion: '13.5',
+        platformVersion: '13.7',
         orientation: 'PORTRAIT',
         browserName: 'safari',
         noReset: true,
