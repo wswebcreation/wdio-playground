@@ -12,12 +12,12 @@ config.region = 'eu'; // For us cloud, change this to 'us'
 // ========
 config.services = config.services.concat(
     [['sauce',
-        {
-            sauceConnect: true,
-            sauceConnectOpts: {
-                logfile: './sc-test.log',
-            }
-        },
+        // {
+        //     sauceConnect: true,
+        //     sauceConnectOpts: {
+        //         logfile: './sc-test.log',
+        //     }
+        // },
     ]]);
 
 exports.config = config;
