@@ -4,7 +4,7 @@ const { config } = require('../wdio.local.appium.shared.conf');
 // Specify Test Files
 // ==================
 config.specs = [
-    './test/web/specs/**/*.js',
+    './test/web/specs/demo-site/best-practices/*.js',
 ];
 
 // ============
