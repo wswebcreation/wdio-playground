@@ -22,7 +22,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: 
-    de v6|
+    cd v6|
     npm install
     npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
   displayName: 'npm install and test'
