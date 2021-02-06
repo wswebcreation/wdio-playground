@@ -20,7 +20,8 @@ steps:
   inputs:
     versionSpec: '14'
   displayName: 'Install Node.js'
-
+- bash: echo $SAUCE_USER
+- bash: echo $SAUCE_KEY
 - script: | 
     cd v6
     npm install
