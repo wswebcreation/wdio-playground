@@ -29,3 +29,5 @@ steps:
     echo $SAUCE_ACCESS_KEY
     #npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
   displayName: 'npm install and test'
+  env:
+    SAUCE_ACCESS_KEY: $(sauce_access_key)
