@@ -21,8 +21,8 @@ steps:
     versionSpec: '14'
   displayName: 'Install Node.js'
 
-- script: 
-    cd v6 |
-    npm install |
+- script: | 
+    cd v6
+    npm install
     npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
   displayName: 'npm install and test'
