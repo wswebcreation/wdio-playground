@@ -21,9 +21,11 @@ steps:
     versionSpec: '14'
   displayName: 'Install Node.js'
 - bash: echo $SAUCE_USER
-- bash: echo $SAUCE_KEY
+- bash: echo $SAUCE_ACCESS_KEY
 - script: | 
     cd v6
     npm install
+    echo $SAUCE_USERNAME
+    echo $SAUCE_ACCESS_KEY
     npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
   displayName: 'npm install and test'
