@@ -10,17 +10,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-- name: sauce_user
-  value: $(SAUCE_USERNAME)
+- name: sauce_username
+  value: $(SAUCE_USER)
 - name: sauce_access_key
-  value: $(SAUCE_ACCESS_KEY)
+  value: $(SAUCE_KEY)
 
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '14'
   displayName: 'Install Node.js'
-- bash: echo $SAUCE_USER
+- bash: echo $SAUCE_USERNAME
 - bash: echo $SAUCE_ACCESS_KEY
 - script: | 
     cd v6
