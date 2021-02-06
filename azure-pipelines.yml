@@ -24,10 +24,10 @@ steps:
 - bash: echo $SAUCE_ACCESS_KEY
 - script: | 
     cd v6
-    # npm install
-    echo $SAUCE_USERNAME
-    echo $SAUCE_ACCESS_KEY
-    #npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
+    npm install
+    # echo $SAUCE_USERNAME
+    # echo $SAUCE_ACCESS_KEY
+    npm run test.sauce.chrome -- --spec=test/web/specs/demo-site/best-practices/checkout.summary.spec.js
   displayName: 'npm install and test'
   env:
     SAUCE_ACCESS_KEY: $(sauce_access_key)
